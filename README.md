@@ -18,3 +18,24 @@ mysql -h host -u user -ppass base_de_donnees > fichier_dump
 ```bash
 mysql -h host -u user -ppass base_de_donnees < fichier_dump
 ```
+
+# Syncronisation de dossiers entre 2 serveurs
+**Génération de la clé SSH (si aucune clé sur le serveur)**
+```bash
+ssh-keygen -t rsa -b 2048
+```
+**On copie la clé sur le serveur distant.**
+```bash
+ssh-copy-id -i /root/.ssh/id_rsa.pub root@serveurdistant
+```
+**Une fois la clé installé, on obtient le message suivant :**
+```bash
+Number of key(s) added: 1
+
+Now try logging into the machine, with: "ssh 'root@xx.xx.xx.xx'"
+and check to make sure that only the key(s) you wanted were added.
+```
+**Commande RSYNC**
+```bash
+rsync -avz -e "ssh -i /root/.ssh/id_rsa" source/ login@serveur:destination/
+```
