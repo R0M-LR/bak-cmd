@@ -8,3 +8,13 @@ sudo dd bs=4m if=/dev/disk2 | gzip > raspbian.img.gz
 gunzip --stdout raspbian.img.gz | sudo dd bs=4m of=/dev/disk2
 ```
 > Sous linux le BS=4m s'écrit avec un M majuscule
+
+# Sauvegarde/Restauration MySQL
+**Sauvegarde de la base**
+```bash
+mysql -h host -u user -ppass base_de_donnees > fichier_dump
+```
+**Restauration de la base**
+```bash
+mysql -h host -u user -ppass base_de_donnees < fichier_dump
+```
