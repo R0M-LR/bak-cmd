@@ -19,7 +19,7 @@ mysql -h host -u user -ppass base_de_donnees > fichier_dump
 mysql -h host -u user -ppass base_de_donnees < fichier_dump
 ```
 
-# Syncronisation de dossiers entre 2 serveurs
+# Syncronisation entre 2 serveurs
 **Génération de la clé SSH (si aucune clé sur le serveur)**
 ```bash
 ssh-keygen -t rsa -b 2048
