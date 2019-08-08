@@ -12,7 +12,7 @@ gunzip --stdout raspbian.img.gz | sudo dd bs=4m of=/dev/disk2
 # Sauvegarde/Restauration MySQL
 **Sauvegarde de la base**
 ```bash
-mysql -h host -u user -ppass base_de_donnees > fichier_dump
+mysqldump -h host -u user -ppass base_de_donnees > fichier_dump
 ```
 **Restauration de la base**
 ```bash
